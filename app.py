@@ -44,21 +44,21 @@ class Template(db.Model):
 actors = Template.query.with_entities(Template.actor).all()
 actors_set = set()
 actors_list = []
-print("Actors from db are: {}".format(actors))
+#print("Actors from db are: {}".format(actors))
 for actor in actors:
     #removing quotes and comma
-    actor = str(actor)[3:-3]
+    actor = str(actor)[2:-3]
     actors_set.add(actor)
     actors_list = list(actors_set)
     actors_list.sort()
 
-print("Actors: {}".format(actors_list))
+#print("Actors: {}".format(actors_list))
 
 movies = Template.query.with_entities(Template.movie).all()
 movies_set = set()
 movies_list = []
 for movie in movies:
-    movie = str(movie)[3:-3]
+    movie = str(movie)[2:-3]
     movies_set.add(movie)
     movies_list = list(movies_set)
     movies_list.sort()
